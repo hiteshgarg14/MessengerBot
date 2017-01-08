@@ -54,6 +54,7 @@ def post_facebook_message(fbid, recevied_message):
     for token in tokens:
     	print type(str(token))
         if token in jokes:
+        	print "tokenjoke"
             joke_text = random.choice(jokes[token])
             break
         elif str(token) in ('Hi' or 'Hello' or 'Yo'):
@@ -62,6 +63,7 @@ def post_facebook_message(fbid, recevied_message):
         	break
 
     if not joke_text:
+    	print "not"
         joke_text = "I didn't understand! Send 'stupid', 'fat', 'dumb' for a Maiven joke!"
 
 
