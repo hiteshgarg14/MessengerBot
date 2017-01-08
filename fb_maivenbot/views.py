@@ -41,7 +41,10 @@ class MaivenBotView(generic.View):
                 if 'message' in message:
                     # Print the message to the terminal
                     pprint(message)
-                    post_facebook_message(message['sender']['id'], message['message']['text'])          
+                    try:
+                    	post_facebook_message(message['sender']['id'], message['message']['text'])          
+                    except:
+                    	return HttpResponse() 	
         return HttpResponse()  
 
 def post_facebook_message(fbid, recevied_message):
