@@ -56,11 +56,11 @@ def post_facebook_message(fbid, recevied_message):
         joke_text = "I didn't understand! Send 'stupid', 'fat', 'dumb' for a Maiven joke!"
 
     user_details_url = "https://graph.facebook.com/v2.6/%s"%fbid
-    user_details_params = {'fields':'first_name,last_name,profile_pic', 'access_token':'EAAYq3XrOGskBAKflCQyjP8gZCxlgEZCKQ9dSTJoBFUs8j80GmCjIc6ZBPaferTRJNrZA4XYeux3mXPOUAXFPA97Ec31Hev7JKAftYDWfe8Fhx14k7iwIlUp0RxZCGTBp2n2BYhNADuaHETnxgZB0tZCJ2JgJ4E9HakwN4pEw26XKQZDZD'}
+    user_details_params = {'fields':'first_name,last_name,profile_pic', 'access_token':'EAAI4deE5N1kBAJGq6SxfnhlNUzuB45jsZCQiUlyQCnM87ZAXg1sQ86LgvDUYVaiZASgKVbDhourLUnKZC1dDxTWZAGmkuzrlPPyV4XwHXcy8mnuNaS0aM7WAoVDycGoAzx7HuGcyyCizYYKZBARpiUw3MAZAlRVzsgiwUtIyEnqLQZDZD'}
     user_details = requests.get(user_details_url, user_details_params).json()
     joke_text = 'Yo '+user_details['first_name']+'..!' + joke_text   
 
-    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=EAAYq3XrOGskBAKflCQyjP8gZCxlgEZCKQ9dSTJoBFUs8j80GmCjIc6ZBPaferTRJNrZA4XYeux3mXPOUAXFPA97Ec31Hev7JKAftYDWfe8Fhx14k7iwIlUp0RxZCGTBp2n2BYhNADuaHETnxgZB0tZCJ2JgJ4E9HakwN4pEw26XKQZDZD' 
+    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=EAAI4deE5N1kBAJGq6SxfnhlNUzuB45jsZCQiUlyQCnM87ZAXg1sQ86LgvDUYVaiZASgKVbDhourLUnKZC1dDxTWZAGmkuzrlPPyV4XwHXcy8mnuNaS0aM7WAoVDycGoAzx7HuGcyyCizYYKZBARpiUw3MAZAlRVzsgiwUtIyEnqLQZDZD' 
     response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":joke_text}})
     status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
     pprint(status.json())              
