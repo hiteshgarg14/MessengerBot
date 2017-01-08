@@ -52,7 +52,7 @@ def post_facebook_message(fbid, recevied_message):
     tokens = re.sub(r"[^a-zA-Z0-9\s]",' ',recevied_message).lower().split()
     joke_text = ''
     for token in tokens:
-    	#print type(token)
+    	print type(str(token))
         if token in jokes:
             joke_text = random.choice(jokes[token])
             break
