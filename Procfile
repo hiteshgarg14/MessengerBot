@@ -1,0 +1,1 @@
+web: gunicorn maivenbot.wsgi:app --log-file=-
