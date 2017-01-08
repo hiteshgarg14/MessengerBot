@@ -55,8 +55,12 @@ def post_facebook_message(fbid, recevied_message):
         if token in jokes:
             joke_text = random.choice(jokes[token])
             break
+        elif token == ('Hi' or 'Hello' or 'Yo'):
+        	joke_text = 'Yo '+user_details['first_name']+'..!'
+        		    
     if not joke_text:
         joke_text = "I didn't understand! Send 'stupid', 'fat', 'dumb' for a Maiven joke!"
+
 
     user_details_url = "https://graph.facebook.com/v2.6/%s"%fbid
     user_details_params = {'fields':'first_name,last_name,profile_pic', 'access_token':'EAAI4deE5N1kBAJGq6SxfnhlNUzuB45jsZCQiUlyQCnM87ZAXg1sQ86LgvDUYVaiZASgKVbDhourLUnKZC1dDxTWZAGmkuzrlPPyV4XwHXcy8mnuNaS0aM7WAoVDycGoAzx7HuGcyyCizYYKZBARpiUw3MAZAlRVzsgiwUtIyEnqLQZDZD'}
