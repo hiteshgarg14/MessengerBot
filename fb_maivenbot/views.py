@@ -55,9 +55,9 @@ def post_facebook_message(fbid, recevied_message):
         if token in jokes:
             joke_text = random.choice(jokes[token])
             break
-        elif token == ('Hi' or 'Hello' or 'Yo'):
+        elif token in ('Hi' or 'Hello' or 'Yo'):
         	joke_text = 'Yo '+user_details['first_name']+'..!'
-        		    
+
     if not joke_text:
         joke_text = "I didn't understand! Send 'stupid', 'fat', 'dumb' for a Maiven joke!"
 
